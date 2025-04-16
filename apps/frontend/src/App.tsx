@@ -8,9 +8,6 @@ import { nanoid } from "nanoid";
 function App() {
   useEffect(() => {
     (async () => {
-      const resp = await client.index.$get()
-      const data = await resp.text()
-
       const res = await client.hello[":id"].$get({ param: { id: nanoid() } });
 
       if (res.ok) {

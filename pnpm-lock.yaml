@@ -50,7 +50,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/config-typescript
       '@types/node':
-        specifier: ^20.11.17
+        specifier: ^20.17.30
         version: 20.17.30
       tsx:
         specifier: ^4.7.1

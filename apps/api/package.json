@@ -22,7 +22,7 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/jest-presets": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20.11.17",
+    "@types/node": "^20.17.30",
     "tsx": "^4.7.1"
   }
 }
