@@ -1,9 +1,19 @@
-import { log } from "@repo/logger";
-import { createServer } from "./server";
+import {serve} from '@hono/node-server'
+import {Hono} from 'hono'
+import "dotenv/config"
+import helloRouter from "./hello.ts";
 
-const port = process.env.PORT || 5001;
-const server = createServer();
+const app = new Hono()
+    .route("/hello", helloRouter)
+    .get('/', (c) => {
+        return c.text('Hello Hono!')
+    })
 
-server.listen(port, () => {
-  log(`api running on ${port}`);
-});
+export type AppType = typeof app
+
+serve({
+    fetch: app.fetch,
+    port: Number(process.env.PORT || 3000)
+}, (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`)
+})

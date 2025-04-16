@@ -10,6 +10,9 @@
     "test": "turbo run test",
     "check-types": "turbo run check-types"
   },
+  "dependencies": {
+    "hono": "^4.7.5"
+  },
   "devDependencies": {
     "prettier": "^3.5.3",
     "turbo": "^2.5.0"
