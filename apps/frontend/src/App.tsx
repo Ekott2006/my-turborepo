@@ -5,9 +5,14 @@ import "./App.css";
 import { client } from "./utils.ts";
 import { nanoid } from "nanoid";
 
+
 function App() {
   useEffect(() => {
     (async () => {
+
+      const data = await (await client.index.$get()).text()
+      console.log(data);
+      
       const res = await client.hello[":id"].$get({ param: { id: nanoid() } });
 
       if (res.ok) {
